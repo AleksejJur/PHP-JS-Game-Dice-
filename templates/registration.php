@@ -6,12 +6,12 @@ require_once 'connect.php';
 if(isset($_POST['register'])){
     
     //Retrieve the field values from our registration form.
-    $name = !empty($_POST['name']) ? trim($_POST['name']) : null;
-    $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
-    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
-    $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;
+    $name = !empty($_POST['inputName']) ? trim($_POST['inputName']) : null;
+    $email = !empty($_POST['inputEmail']) ? trim($_POST['inputEmail']) : null;
+    $username = !empty($_POST['inputUsername']) ? trim($_POST['inputUsername']) : null;
+    $pass = !empty($_POST['inputPassword']) ? trim($_POST['inputPassword']) : null;
     
-    
+
     //Construct the SQL statement and prepare it.
     $sql = "SELECT COUNT(username) AS num FROM users WHERE username = :username";
     $stmt = $pdo->prepare($sql);
@@ -55,22 +55,23 @@ if(isset($_POST['register'])){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
   <body>
     <div class="container">
       <form class="form-signin" method="POST">
         <h2 class="form-signin-heading">Please register</h2>
         <label for="inputName" class="sr-only">Name</label>
-        <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
+        <input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+        <input type="text" name="inputUsername" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
         <br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="register" value="register">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="register">Register</button>
+        <button type="button" class="btn btn-success btn-lg btn-block"><a href="templates/login.php">Sign in</a></button>
       </form>
     </div> 
 
