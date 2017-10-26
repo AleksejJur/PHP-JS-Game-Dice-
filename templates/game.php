@@ -32,5 +32,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     <div class="container">
     	<div class="row">
     		<h1>it wil be game</h1>
+            <button class="btn btn-default"></button>
+            <button class="btn btn-success"></button>
     	</div>
     </div> 

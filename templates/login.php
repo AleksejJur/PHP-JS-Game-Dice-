@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once 'config.php';
+require_once '../config.php';
 
 
 // Define variables and initialize with empty values
@@ -13,17 +13,17 @@ $username_err = $password_err = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
-    if(empty(trim($_POST["username"]))){
+    if(empty(trim($_POST["inputUsername"]))){
         $username_err = 'Please enter username.';
     } else{
-        $username = trim($_POST["username"]);
+        $username = trim($_POST["inputUsername"]);
     }
     
     // Check if password is empty
-    if(empty(trim($_POST['password']))){
+    if(empty(trim($_POST['inputPassword']))){
         $password_err = 'Please enter your password.';
     } else{
-        $password = trim($_POST['password']);
+        $password = trim($_POST['inputPassword']);
     }
     
     // Validate credentials
@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->bindParam(':username', $param_username, PDO::PARAM_STR);
             
             // Set parameters
-            $param_username = trim($_POST["username"]);
+            $param_username = trim($_POST["inputUsername"]);
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             save the username to the session */
                             session_start();
                             $_SESSION['username'] = $username;      
-                            header("location: welcome.php");
+                            header("location: ../templates/game.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = 'The password you entered was not valid.';
@@ -96,12 +96,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		</div>
     </div>
     <div class="container">
-      <form class="form-signin" method="POST">
+      <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
         <label for="inputEmail" class="sr-only">Username</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="text" name="inputUsername" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+        <span class="help-block"><?php echo $username_err; ?></span>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+        <span class="help-block"><?php echo $password_err; ?></span>
         <button type="submit" class="btn btn-primary btn-block" name="Login" value="Login">Lets play!</button>
       </form>
     </div> 
