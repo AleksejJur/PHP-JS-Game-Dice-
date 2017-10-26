@@ -1,6 +1,12 @@
 <?php
 
 session_start();
+
+// If session variable is not set it will redirect to login page
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  header("location: login.php");
+  exit;
+}
 ?>
 
 <!doctype html>
@@ -27,4 +33,4 @@ session_start();
     	<div class="row">
     		<h1>it wil be game</h1>
     	</div>
-    </div>
+    </div> 

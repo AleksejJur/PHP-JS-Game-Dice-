@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'connect.php';
+require_once '../config.php';
 
 if(isset($_POST['register'])){
     
@@ -40,6 +40,8 @@ if(isset($_POST['register'])){
     if($result){
         //What you do here is up to you!
          echo '<div style="background-color: green;" class="text-center">Thank you for registering with our website.</div>';
+         header("Refresh: 2; URL=login.php");
+
     }
 }
 ?>
