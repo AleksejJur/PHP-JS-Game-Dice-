@@ -71,7 +71,7 @@ if(isset($_POST['register'])){
         <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="register">Register</button>
-        <button type="button" class="btn btn-success btn-lg btn-block"><a href="templates/login.php">Sign in</a></button>
+        <button type="button" class="btn btn-success btn-lg btn-block"><a href="../templates/login.php">Sign in</a></button>
       </form>
     </div> 
 

@@ -1,7 +1,22 @@
+<?php
+
+session_start();
+
+require_once 'connect.php';
+
+
+if (isset($_SESSION['username']) && $_SESSION['level'] > 0) {
+    // user logged in
+} else {
+    // user is guest
+    header("Location: login.php");
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Dice Game</title>
+    <title>Sign in</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,12 +36,12 @@
 		</div>
     </div>
     <div class="container">
-      <form class="form-signin">
+      <form class="form-signin" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Username</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <button type="submit" class="btn btn-primary btn-block" name="Login" value="Login">Lets play!</button>
+        <button type="submit" class="btn btn-primary btn-block" name="Login" value="Login"><a href="../templates/game.php">Lets play!</a></button>
       </form>
-    </div> <!-- /container -->
+    </div> 
