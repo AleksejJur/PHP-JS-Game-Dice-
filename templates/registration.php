@@ -58,33 +58,26 @@ if(isset($_POST['register'])){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/register.css">
   </head>
   <body>
     <div class="container">
-      <form class="form-signin" method="POST">
-        <h2 class="form-signin-heading">Please register</h2>
-        <label for="inputName" class="sr-only">Name</label>
-        <input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" name="inputUsername" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
-        <br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="register">Register</button>
-        <button type="button" class="btn btn-success btn-lg btn-block"><a href="../templates/login.php">Sign in</a></button>
+      <form class="form-signin justify-content-center" method="POST">
+        <div class="col-4">
+            <label for="inputName" class="sr-only">Name</label>
+            <input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputUsername" class="sr-only">Username</label>
+            <input type="text" name="inputUsername" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" name="register">Register</button>
+            <button type="button" class="btn btn-success btn-lg btn-block"><a href="../templates/login.php">Sign in</a></button>
+        </div>
       </form>
     </div> 
-
-
-
-
-
-
-
-
-
 
 
 
