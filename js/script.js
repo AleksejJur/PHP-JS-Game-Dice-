@@ -1,66 +1,4 @@
-<?php
-
-session_start();
-
-// If session variable is not set it will redirect to login page
-if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
-  header("location: login.php");
-  exit;
-}
-?>
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Dice Game</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  </head>
-  <body>
-    <div class="jumbotron jumbotron-fluid">
-		  <div class="container">
-    		<h1 class="display-3">Dice Game!</h1>
-    		<p class="lead">Simple dice game.</p>
-        <p class="lead">
-          
-          <!-- INSERT COOCKIES -->
-        </p>
-        <div class="col text-right"><a class="btn btn-danger" href="logout.php">Logout</a></div>
-		  </div>
-    </div>
-
-    <div class="container">
-    	<div class="row">
-        <div class="col-sm-5"></div>
-        <div class="col-sm-5">
-          <br>
-          <button class="btn btn-default" id="start" type="submit">Game Start</button>
-          <button class="btn btn-success" id="roll" type="submit" disabled>Roll Dice</button> 
-        </div>
-      </div>
-      <div class="text-center col" id="win_result"></div>
-    </div> 
-    <div class="container">
-
-   <div class="row text-center mt-3">
-        <div class="col-md-4"><img class="img " id="result_1" src="../images/dice1.png"> </div>
-        <div class="col-md-4"><img class="img " id="result_2" src="../images/dice2.png"> </div>
-        <div class="col-md-4"><img class="img " id="result_3" src="../images/dice3.png"> </div>
-   </div>
-
-   <div id="roll_result" class="col text-center">
-   </div>
-
-</div>
-<script>
-  // start = document.getElementById('start');
+// start = document.getElementById('start');
 // roll = document.getElementById('roll');
 result_1 = document.getElementById('result_1');
 result_2 = document.getElementById('result_2');
@@ -136,6 +74,3 @@ document.getElementById('roll').addEventListener("click", function () { // liste
      }
 
     });
-</script>
-<script src="../js/script.js"></script>
-    

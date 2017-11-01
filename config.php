@@ -2,23 +2,16 @@
  
 //connect.php
  
-/**
- * This script connects to MySQL using the PDO object.
- * This can be included in web pages where a database connection is needed.
- * Customize these to match your MySQL database connection details.
- * This info should be available from within your hosting panel.
- */
- 
-//Our MySQL user account.
+//MySQL user account.
 define('MYSQL_USER', 'root');
  
-//Our MySQL password.
+//MySQL password.
 define('MYSQL_PASSWORD', '');
  
 //The server that MySQL is located on.
 define('MYSQL_HOST', 'localhost');
  
-//The name of our database.
+//The name of database.
 define('MYSQL_DATABASE', 'dicegame');
  
 /**
@@ -26,6 +19,8 @@ define('MYSQL_DATABASE', 'dicegame');
  * I'm going to set the error mode to "Exceptions".
  * I'm also going to turn off emulated prepared statements.
  */
+
+// pochitat pro exceptions i prepared statements
 $pdoOptions = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_EMULATE_PREPARES => false

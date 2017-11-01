@@ -50,12 +50,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             session_start();
                             $_SESSION['username'] = $username;      
                             header("location: ../templates/game.php");
-                        } else{
+                        } else {
                             // Display an error message if password is not valid
                             $password_err = 'The password you entered was not valid.';
                         }
                     }
-                } else{
+                } else {
                     // Display an error message if username doesn't exist
                     $username_err = 'No account found with that username.';
                 }
@@ -71,6 +71,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     unset($pdo);
 }
+
+// setcookie("cookies", $_POST['inputUsername'], time() + (60*60*24*7), "/"); 
+//     } else {
+//         echo "Try again.";
+
 ?>
 
 <!doctype html>
