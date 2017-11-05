@@ -28,8 +28,8 @@ session_start();
     <div class="container">
     	<div class="row">
     		<h2>Register if you want to play game!</h2>
-    		<button type="button" class="btn btn-primary btn-lg btn-block"><a href="templates/registration.php">Register</a></button>
-    		<button type="button" class="btn btn-success btn-lg btn-block"><a href="templates/login.php">Sign in</a></button>
+    		<a class="btn btn-primary btn-lg btn-block" href="templates/registration.php">Register</a>
+    		<a class="btn btn-success btn-lg btn-block" href="templates/login.php">Sign in</a>
     	</div>
     </div>
 
